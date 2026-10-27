@@ -1,0 +1,13 @@
+# Netlify configuration for the Smart Expense Tracker (React + Vite).
+
+[build]
+  # Production build; Vite writes static files to dist/ (its default outDir).
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  # Pin Node so Netlify builds match local builds (Vite 5 requires Node 18+).
+  NODE_VERSION = "22"
+
+# No SPA redirect: the app is a single page with no client-side router,
+# so every request is served by dist/index.html or a real asset file.
